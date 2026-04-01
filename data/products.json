@@ -1,0 +1,6 @@
+[
+  { "id": 1, "name": "T-Shirt", "price": 19.95, "image": "/prod-images/t-shirt.jpg" },
+  { "id": 2, "name": "Sneakers", "price": 49.95, "image": "/prod-images/sneakers.jpg" },
+  { "id": 3, "name": "Hat", "price": 14.95, "image": "/prod-images/hat.jpg" },
+  { "id": 4, "name": "Jeans", "price": 55.95, "image": "/prod-images/jeans.jpg" }
+]

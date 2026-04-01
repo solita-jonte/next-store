@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #505050;
+  --tamed: #a0a0a0;
+}
+
+
+.logo {
+  height: .8em;
+  padding: 0 0.4em 0 0;
+  display: inline;
+  margin-top: -0.2em;
+}
+
+.cartbar {
+  top: 0.2em;
+  right: 0.65em;
+  font-size: 2em;
+  padding: 0.3em;
+  background: #79cf51;
+  border: 1px solid var(--foreground);
+  border-radius: 0.9em;
+}
+
+.cartwagon {
+  padding: 0.15em 1em;
+  background: var(--background);
+  border: 1px solid var(--foreground);
+  border-radius: 0.7em;
+}
+
+.product-card {
+  border-color: var(--tamed);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-roboto);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #1d1d1d;
+    --foreground: #d3d3d3;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+}
