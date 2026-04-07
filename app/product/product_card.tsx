@@ -2,9 +2,10 @@
 import { useRef } from "react";
 import { useCart } from "../cart/cart_context";
 import { useFlyToCart } from "../cart/fly_to_cart";
+import { Product } from './product';
 
 type ProductCardProps = {
-    product: any,
+    product: Product,
 };
 
 export function ProductCard({product}: ProductCardProps) {
@@ -20,7 +21,7 @@ export function ProductCard({product}: ProductCardProps) {
   };
 
   return (
-    <div key={product.id} className="product-card border p-4 rounded-2xl shadow hover:shadow-xl transition">
+    <div className="product-card border p-4 rounded-2xl shadow hover:shadow-xl transition">
       <div className="flex justify-center">
         <img
             ref={imgRef}
