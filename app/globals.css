@@ -1,17 +1,36 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #505050;
-  --tamed: #a0a0a0;
+  --background: #fff;
+  --foreground: #555;
+  --tamed: #999;
+  --hilite: var(--color-green-500);
+  --lolite: var(--color-blue-500);
 }
 
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+}
 
 .logo {
   height: .8em;
   padding: 0 0.4em 0 0;
   display: inline;
   margin-top: -0.2em;
+  animation-name: wobble;
+  animation-duration: 3s;
+  animation-fill-mode: both;
+  animation-iteration-count: 2;
+}
+
+.header > span:nth-child(3n-1) {
+  color: var(--lolite);
+}
+
+.header > span:nth-child(3n) {
+  color: var(--hilite);
 }
 
 .cartbar {
@@ -19,7 +38,7 @@
   right: 0.65em;
   font-size: 2em;
   padding: 0.3em;
-  background: #79cf51;
+  background: var(--hilite);
   border: 1px solid var(--foreground);
   border-radius: 0.9em;
 }
@@ -31,8 +50,38 @@
   border-radius: 0.7em;
 }
 
-.product-card {
+.product-card, .add-button {
   border-color: var(--tamed);
+}
+
+.footer {
+  width: 100%;
+  background: var(--background);
+  color: var(--tamed);
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+}
+
+.footer > * {
+  margin: 0 0.3em;
+}
+
+.bounce-parent {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.random-bounce {
+  display: block;
+  width: 100%;
+  height: 100%;
+  animation: random-bounce 12s infinite linear;
+}
+
+.random-bounce:hover {
+  padding-left: 10%;
 }
 
 @theme inline {
@@ -48,8 +97,24 @@
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Roboto, Arial, Helvetica, sans-serif;
+@keyframes wobble {
+  0% { transform: translateX(0%); } 
+  15% { transform: translate(-10%, -25%) rotate(-10deg); } 
+  30% { transform: translate(20%, 2%) rotate(7deg); } 
+  45% { transform: translate(-15%, -3%) rotate(-5deg); } 
+  60% { transform: translate(10%, 3%) rotate(3deg); }
+  75% { transform: translate(-5%, -2%) rotate(-2deg); }
+  83% { transform: translate(3%, 1%) rotate(1deg); }
+  100% { transform: translateX(0%); } 
+}
+
+@keyframes random-bounce {
+  0%  { transform: translate( 10%,   7%); }
+  10% { transform: translate( 20%,  40%); }
+  20% { transform: translate( 80%,  15%); }
+  40% { transform: translate( 99%, -10%); }
+  50% { transform: translate(-10%,  75%); }
+  70% { transform: translate( 67%,  15%); }
+  80% { transform: translate(  7%,  -1%); }
+  95% { transform: translate( 60%,  90%); }
 }
